@@ -26,7 +26,7 @@
 
 // Buena suerte!
 
-var lista = document.querySelector(".color-list");
+var list = document.querySelector(".color-list");
 
 const colorList = [
   {
@@ -63,7 +63,7 @@ const colorList = [
   }
 ];
 
-function addColors(lista) {
+function addColors(list) {
   for (let i = 0; i < colorList.length; i++) {
     let li = document.createElement("li");
     li.classList.add("color-item");
@@ -91,7 +91,7 @@ function addColors(lista) {
     button2.textContent = "Page color";
     button2.classList.add("color-set");
 
-    lista.appendChild(li);
+    list.appendChild(li);
 
     li.appendChild(div1);
     li.appendChild(div2);
@@ -101,7 +101,7 @@ function addColors(lista) {
 }
 
 //Añade la lista de colores
-addColors(lista);
+addColors(list);
 
 //selecciona la etiqueta body
 let body = document.querySelector("body");
@@ -109,8 +109,34 @@ let body = document.querySelector("body");
 //onclick de toda la vida en el body
 body.addEventListener("click", () => alert("body"), false);
 //Detiene la propagación del event listener ya que al hacer click en cualquier parte de la página salta el alert.
-lista.addEventListener("click", e => e.stopPropagation(), false);
+list.addEventListener("click", e => e.stopPropagation(), false);
 
-let divs = document.querySelectorAll("div");
-for (let i = 0; i < divs.length; i++) {}
-console.log(divs);
+//La idea es obtener los hijos de cada elemento de la lista, hacer 8 if comparando el contenido de texto del primer div dentro del li, y hacer los event listener de cada botón.
+let li = document.querySelectorAll("li");
+
+for (let i = 0; i < li.length; i++) {
+  //saltar elemento de lista con el titulo
+  if (i !== 0) {
+    let liElements = li[i].childNodes;
+    liElements[2].addEventListener("click", e => e.stopPropagation(), false);
+    liElements[3].addEventListener("click", e => e.stopPropagation(), false);
+
+    if (li[i].hasChildNodes) {
+      if (li[i].firstChild.textContent === "Color white") {
+        liElements[2].addEventListener(
+          "click",
+          () => (li[i + 1].style.backgroundColor = colorList[0].hex),
+          false
+        );
+
+        liElements[3].addEventListener(
+          "click",
+          () => (body.style.backgroundColor = colorList[0].hex),
+          false
+        );
+      }
+    }
+  }
+}
+
+//console.log(li);
