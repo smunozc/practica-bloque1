@@ -71,23 +71,25 @@ function addColors() {
     //li.appendChild(document.createTextNode(""));
 
     let div1 = document.createElement("div");
-    div1.innerHTML = "Color " + colorList[i].colorName;
+    div1.textContent = "Color " + colorList[i].colorName;
     div1.classList.add("color-name");
 
     let div2 = document.createElement("div");
-    div2.innerHTML = "Muestra";
+    div2.textContent = "Muestra";
     div2.classList.add("color-show");
 
     let button1 = document.createElement("button");
-    button1.innerHTML = "Next item color";
+    button1.textContent = "Next item color";
     button1.classList.add("color-set");
 
     let button2 = document.createElement("button");
-    button2.innerHTML = "Page color";
+    button2.textContent = "Page color";
     button2.classList.add("color-set");
 
     li.appendChild(div1);
     li.appendChild(div2);
+    li.appendChild(button1);
+    li.appendChild(button2);
     lista.appendChild(li);
 
     console.log(li);
