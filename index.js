@@ -26,6 +26,8 @@
 
 // Buena suerte!
 
+var lista = document.querySelector(".color-list");
+
 const colorList = [
   {
     colorName: "white",
@@ -61,14 +63,15 @@ const colorList = [
   }
 ];
 
-function addColors() {
-  let lista = document.querySelector(".color-list");
+function addColors(lista) {
   for (let i = 0; i < colorList.length; i++) {
     let li = document.createElement("li");
     li.classList.add("color-item");
     if (i % 2 === 1) {
       li.classList.add("color-item--odd");
     }
+
+    li.addEventListener("click", () => alert(colorList[i].colorName), false);
 
     let div1 = document.createElement("div");
     div1.textContent = "Color " + colorList[i].colorName;
@@ -97,4 +100,17 @@ function addColors() {
   }
 }
 
-addColors();
+//Añade la lista de colores
+addColors(lista);
+
+//selecciona la etiqueta body
+let body = document.querySelector("body");
+
+//onclick de toda la vida en el body
+body.addEventListener("click", () => alert("body"), false);
+//Detiene la propagación del event listener ya que al hacer click en cualquier parte de la página salta el alert.
+lista.addEventListener("click", e => e.stopPropagation(), false);
+
+let divs = document.querySelectorAll("div");
+for (let i = 0; i < divs.length; i++) {}
+console.log(divs);
