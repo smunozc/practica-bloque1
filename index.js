@@ -61,41 +61,11 @@ const colorList = [
   }
 ];
 
-/*
-for (let i = 0; i < colorList.length; i++) {
-  let ul = document.querySelector(".color-list");
-  let li = document.createElement("li");
-  li.classList.add("color-item");
-  if (!(i % 2 == 0)) {
-    li.classList.add("color-item--odd");
-  }
-  let divColor = document.createElement("div");
-  divColor.classList.add("color-name");
-  divColor.textContent = "Color: " + colorList[i].colorName;
-  let divMuestra = document.createElement("div");
-  divMuestra.classList.add("color-show");
-  divMuestra.textContent = "Muestra";
-  divMuestra.style.backgroundColor = colorList[i].hex;
-  divMuestra.style.border = "1px dashed";
-  let buttonColor = document.createElement("button");
-  buttonColor.classList.add("color-set");
-  buttonColor.textContent = "Next item color";
-  let buttonPage = document.createElement("button");
-  buttonPage.classList.add("color-set");
-  buttonPage.textContent = "Page Color";
- 
-  ul.appendChild(li);
-  li.appendChild(divColor);
-  li.appendChild(divMuestra);
-  li.appendChild(buttonColor);
-  li.appendChild(buttonPage);
-}
-*/
-
 function addColors() {
   let lista = document.querySelector(".color-list");
   for (let i = 0; i < colorList.length; i++) {
     let li = document.createElement("li");
+    li.classList.add("color-item");
     if (i % 2 === 1) {
       li.classList.add("color-item--odd");
     }
@@ -108,6 +78,8 @@ function addColors() {
     let div2 = document.createElement("div");
     div2.textContent = "Muestra";
     div2.classList.add("color-show");
+    div2.style.backgroundColor = colorList[i].hex;
+    div2.style.border = "1px dashed";
 
     let button1 = document.createElement("button");
     button1.textContent = "Next item color";
