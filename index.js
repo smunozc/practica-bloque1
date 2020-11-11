@@ -65,7 +65,7 @@ function addColors() {
   let lista = document.querySelector(".color-list");
   for (let i = 0; i < colorList.length; i++) {
     let li = document.createElement("li");
-    if (i % 2 === 0) {
+    if (i % 2 === 1) {
       li.classList.add("color-item--odd");
     }
     //li.appendChild(document.createTextNode(""));
@@ -86,11 +86,12 @@ function addColors() {
     button2.textContent = "Page color";
     button2.classList.add("color-set");
 
+    lista.appendChild(li);
+
     li.appendChild(div1);
     li.appendChild(div2);
     li.appendChild(button1);
     li.appendChild(button2);
-    lista.appendChild(li);
 
     console.log(li);
   }
