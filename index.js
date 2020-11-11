@@ -62,20 +62,35 @@ const colorList = [
 ];
 
 function addColors() {
-  let lista2 = document.querySelector(".color-list");
+  let lista = document.querySelector(".color-list");
   for (let i = 0; i < colorList.length; i++) {
+    let li = document.createElement("li");
     if (i % 2 === 0) {
-      let li = document.createElement("li");
       li.classList.add("color-item--odd");
-      li.appendChild(document.createTextNode(""));
-
-      let div = document.createElement("div");
-      div.innerHTML = "Color " + (i + 1);
-      div.classList.add("element-" + (i + 1));
-
-      li.appendChild(div);
-      lista2.appendChild(li);
     }
+    //li.appendChild(document.createTextNode(""));
+
+    let div1 = document.createElement("div");
+    div1.innerHTML = "Color " + colorList[i].colorName;
+    div1.classList.add("color-name");
+
+    let div2 = document.createElement("div");
+    div2.innerHTML = "Muestra";
+    div2.classList.add("color-show");
+
+    let button1 = document.createElement("button");
+    button1.innerHTML = "Next item color";
+    button1.classList.add("color-set");
+
+    let button2 = document.createElement("button");
+    button2.innerHTML = "Page color";
+    button2.classList.add("color-set");
+
+    li.appendChild(div1);
+    li.appendChild(div2);
+    lista.appendChild(li);
   }
-  console.log(lista2);
+  console.log(lista);
 }
+
+addColors();
