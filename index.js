@@ -69,15 +69,11 @@ function addColors() {
       li.classList.add("color-item--odd");
       li.appendChild(document.createTextNode(""));
 
-      let button = document.createElement("button");
-      button.innerHTML = "Texto de ejemplo " + (i + 1);
-      button.classList.add("element-" + (i + 1));
+      let div = document.createElement("div");
+      div.innerHTML = "Color " + (i + 1);
+      div.classList.add("element-" + (i + 1));
 
-      if (i === lista.length - 1) {
-        button.disabled = true;
-      }
-
-      li.appendChild(button);
+      li.appendChild(div);
       lista2.appendChild(li);
     }
   }
