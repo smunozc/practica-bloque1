@@ -89,6 +89,8 @@ function addColors() {
     li.appendChild(div1);
     li.appendChild(div2);
     lista.appendChild(li);
+
+    console.log(li);
   }
   console.log(lista);
 }
