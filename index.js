@@ -69,7 +69,6 @@ function addColors() {
     if (i % 2 === 1) {
       li.classList.add("color-item--odd");
     }
-    //li.appendChild(document.createTextNode(""));
 
     let div1 = document.createElement("div");
     div1.textContent = "Color " + colorList[i].colorName;
