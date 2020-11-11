@@ -94,10 +94,7 @@ function addColors() {
     li.appendChild(div2);
     li.appendChild(button1);
     li.appendChild(button2);
-
-    console.log(li);
   }
-  console.log(lista);
 }
 
 addColors();
