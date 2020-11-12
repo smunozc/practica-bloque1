@@ -134,9 +134,91 @@ for (let i = 0; i < li.length; i++) {
           () => (body.style.backgroundColor = colorList[0].hex),
           false
         );
+      } else if (li[i].firstChild.textContent === "Color red") {
+        liElements[2].addEventListener(
+          "click",
+          () => (li[i + 1].style.backgroundColor = colorList[1].hex),
+          false
+        );
+
+        liElements[3].addEventListener(
+          "click",
+          () => (body.style.backgroundColor = colorList[1].hex),
+          false
+        );
+      } else if (li[i].firstChild.textContent === "Color orange") {
+        liElements[2].addEventListener(
+          "click",
+          () => (li[i + 1].style.backgroundColor = colorList[2].hex),
+          false
+        );
+
+        liElements[3].addEventListener(
+          "click",
+          () => (body.style.backgroundColor = colorList[2].hex),
+          false
+        );
+      } else if (li[i].firstChild.textContent === "Color yellow") {
+        liElements[2].addEventListener(
+          "click",
+          () => (li[i + 1].style.backgroundColor = colorList[3].hex),
+          false
+        );
+
+        liElements[3].addEventListener(
+          "click",
+          () => (body.style.backgroundColor = colorList[3].hex),
+          false
+        );
+      } else if (li[i].firstChild.textContent === "Color orchid") {
+        liElements[2].addEventListener(
+          "click",
+          () => (li[i + 1].style.backgroundColor = colorList[4].hex),
+          false
+        );
+
+        liElements[3].addEventListener(
+          "click",
+          () => (body.style.backgroundColor = colorList[4].hex),
+          false
+        );
+      } else if (li[i].firstChild.textContent === "Color pink") {
+        liElements[2].addEventListener(
+          "click",
+          () => (li[i + 1].style.backgroundColor = colorList[5].hex),
+          false
+        );
+
+        liElements[3].addEventListener(
+          "click",
+          () => (body.style.backgroundColor = colorList[5].hex),
+          false
+        );
+      } else if (li[i].firstChild.textContent === "Color green") {
+        liElements[2].addEventListener(
+          "click",
+          () => (li[i + 1].style.backgroundColor = colorList[6].hex),
+          false
+        );
+
+        liElements[3].addEventListener(
+          "click",
+          () => (body.style.backgroundColor = colorList[6].hex),
+          false
+        );
+      } else if (li[i].firstChild.textContent === "Color silver") {
+        liElements[2].addEventListener(
+          "click",
+          () => (li[1].style.backgroundColor = colorList[7].hex),
+          false
+        );
+
+        liElements[3].addEventListener(
+          "click",
+          () => (body.style.backgroundColor = colorList[7].hex),
+          false
+        );
       }
     }
   }
 }
-
-//console.log(li);
